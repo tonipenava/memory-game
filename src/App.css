@@ -1,0 +1,113 @@
+.App {
+  width: 100%;
+  height: 100vh;
+
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/ikhlas-rahman-MP6VUJJvGnI-unsplash.jpg');
+}
+.button {
+  display: flex;
+  justify-content: center;
+}
+.button-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+@keyframes fireworks {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) rotate(360deg);
+    opacity: 0;
+  }
+}
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  height: 80vh;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.game-container button {
+  width: 12rem;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.game-container button:hover {
+  background: gray;
+  transform: scale(1.05);
+}
+
+.game-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+.you-win {
+  font-size: 8rem;
+  color: white;
+  font-weight: 800;
+}
+.you-lose {
+  font-size: 8rem;
+  color: white;
+  font-weight: 800;
+}
+
+.fireworks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  animation: fireworks 1s ease-in-out infinite;
+}
+
+.fireworks::before,
+.fireworks::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  animation: fireworks 1s ease-in-out infinite;
+}
+
+.fireworks::before {
+  transform: translateX(25px);
+}
+
+.fireworks::after {
+  transform: translateY(25px);
+}
